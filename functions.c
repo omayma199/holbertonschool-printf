@@ -31,7 +31,7 @@ int printint(int n)
 		return (count);
 	}
 	return (0);
-}	
+}
 /**
  * printpercent - print percent
  * @args: argument
@@ -41,5 +41,47 @@ int printpercent(va_list args)
 {
 	(void)args;
 	_putchar('%');
+	return (1);
+}
+/**
+* printstring - prints a string
+* @args: argument
+* Return : int
+*/
+int printstring(va_list args)
+{
+	int length = 0;
+	va_list arg;
+	*str = va_arg(args, char *)
+
+
+	if (str == NULL)
+		_putchar('(');
+		_putchar('n');
+		_putchar('u');
+		_putchar('l');
+		_putchar('l');
+		_putchar(')');
+
+	else
+		{
+			while (str[length] != '\0')
+			{
+				_putchar[str[length]);
+					length++;
+			}
+		}
+	return (1);
+}
+/**
+* printcharacter - prints a char
+*@args: argument
+* Return: int
+*/
+int printcharacter(va_list args)
+{
+	va_list args;
+
+	_putchar(va_arg(args, int));
 	return (1);
 }
