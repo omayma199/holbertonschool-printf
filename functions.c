@@ -77,7 +77,7 @@ int printstring(va_list args)
 * printcharacter - prints a char
 *@args: argument
 *
-* Return: integer
+* Return: int
 */
 int printcharacter(va_list args)
 {
