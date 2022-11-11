@@ -22,7 +22,7 @@ int _printf(const char *format, ...)
 			putchar(*(format + i));
 			count++;
 		}
-		if (format[i] == '%' && format[i + 1] != 'K' && format[i + 1] != '!')
+		if (format[i] == '%')
 		{
 			fun = get_function(format[i + 1], args);
 			if (fun != 0)
@@ -38,6 +38,7 @@ int _printf(const char *format, ...)
 			}
 			else if ((format[i] == '%' && format[i + 1] == 'K')||(format[i] == '%' && format[i + 1] == '!')  )
 			{
+				putchar('%');
 				putchar(format[i]);
 				count++;
 			}
