@@ -1,6 +1,3 @@
-#include <stddef.h>
-#include <stdio.h>
-#include <stdlib.h>
 #include "main.h"
 
 /**
@@ -9,71 +6,69 @@
  * @args : argument
  * Return: number of printed chars
  */
-int printint(va_list args)
+int printint(va_list arg)
 {
-	int v;
-	unsigned int i = 0, valeurT;
-	unsigned count = 1;
-
-	v = va_arg(args, int);
-
-	if (v < 0)
+	unsigned int num;
+	int n = va_arg(arg, int);
+	int d, len;
+	d = 1;
+	len = 0;
+	num = n;
+	if (n < 0)
 	{
-		i = i + _putchar('_');
-		valeurT = v * -1;
+		putchar('_');
+		len++;
+		num = -n;
 	}
-	else
-		valeurT = v;
-
-	while (valeurT > 9)
+	while (num / d > 9)
+		d *= 10;
+	while (d != 0)
 	{
-		valeurT = valeurT / 10;
-		count = count * 10;
+		putchar('0' + num / d);
+		len++;
+		num %= d;
+		d /= 10;
 	}
-	while (count >= 1)
-	{
-		i = i + _putchar(((valeurT / count) % 10) + '0');
-		count = count / 10;
-	}
-	return (i);
+	return (len);
 }
 /**
  * printpercent - print percent
  * @args: argument
  * Return: int
  */
-int printpercent(va_list args)
+int printpercent(va_list arg)
 {
-	(void)args;
-	_putchar('%');
+	(void)arg;
+	putchar('%');
 	return (1);
 }
 /**
-* printstring - prints a string
-* @args: argument
-* Return : string
-*/
-int printstring(va_list args)
+ * printstring - prints a string
+ * @args: argument
+ * Return : string
+ */
+int printstring(va_list arg)
 {
-	int i;
-	char *str = va_arg(args, char *);
+	int i = 0;
+	char *str = va_arg(arg, char *);
 
 	if (str == NULL)
 		str = "(null)";
-	for (i = 0; str[i]; i++)
+	while (str[i] != '\0')
 	{
-		_putchar(str[i]);
+		putchar(str[i]);
+		i++;
 	}
 	return (i);
 }
 /**
-* printcharacter - prints a char
-*@args: argument
-*
-* Return: character
-*/
-int printcharacter(va_list args)
+ * printcharacter - prints a char
+ *@args: argument
+ *
+ * Return: character
+ */
+int printcharacter(va_list arg)
 {
-	_putchar(va_arg(args, int));
+	putchar(va_arg(arg, int));
 	return (1);
 }

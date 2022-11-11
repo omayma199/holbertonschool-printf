@@ -5,27 +5,26 @@
  * @s: char to check
  * Return: pointer to function
  */
-int get_function(const char s, va_list args)
+int get_function(const char s, va_list arg)
 {
     int i = 0;
     int j = 0;
-    
-    print_t print[] = {
-		{'c', printcharacter},
-		{'s', printstring},
-		{'d', printint},
-		{'i', printint},
-		{'%', printpercent}
-	};
 
-	while (print[i].c)
+    print_t type[] = {
+        {'c', printcharacter},
+        {'s', printstring},
+        {'d', printint},
+        {'i', printint},
+        {'%', printpercent}};
+
+    while (type[i].c != 0)
+    {
+        if (type[i].c == s)
         {
-            if (print[i].c == s)
-            {
-                j = j + print[i].f(args);
-                return (j);
-            }
-            i++;
+            j = j + type[i].f(arg);
+            return (j);
         }
+        i++;
+    }
     return (0);
 }
