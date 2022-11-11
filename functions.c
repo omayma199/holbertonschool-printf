@@ -53,22 +53,24 @@ int printstring(va_list args)
 {
 	int length = 0;
 	va_list arg;
-	*str = va_arg(args, char *)
+	*str = va_arg(args, char *);
 
 
 	if (str == NULL)
+	{
 		_putchar('(');
 		_putchar('n');
 		_putchar('u');
 		_putchar('l');
 		_putchar('l');
 		_putchar(')');
+	}
 
 	else
 		{
 			while (str[length] != '\0')
 			{
-				_putchar[str[length]);
+				_putchar(str[length]);
 					length++;
 			}
 		}
