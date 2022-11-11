@@ -26,5 +26,11 @@ int get_function(const char s, va_list arg)
         }
         i++;
     }
+    if (type[i].c == s)
+    {
+        putchar('%');
+        putchar(s);
+        return (2);
+    }
     return (0);
 }
