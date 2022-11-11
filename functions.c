@@ -47,42 +47,26 @@ int printpercent(va_list args)
 /**
 * printstring - prints a string
 * @args: argument
-* Return : length
+* Return : string
 */
 int printstring(va_list args)
 {
-	int length = 0;
-	int *str;
-	
-	va_list arg;
-	*str = va_arg(args, char *);
-
+	int i;
+	char *str = va_arg(args, char *);
 
 	if (str == NULL)
+		str = "(null)";
+	for (i = 0; str[i]; i++)
 	{
-		_putchar('(');
-		_putchar('n');
-		_putchar('u');
-		_putchar('l');
-		_putchar('l');
-		_putchar(')');
+		_putchar(str[i]);
 	}
-
-	else
-		{
-			while (str[length] != '\0')
-			{
-				_putchar(str[length]);
-					length++;
-			}
-		}
-	return (length);
+	return (i);
 }
 /**
 * printcharacter - prints a char
 *@args: argument
 *
-* Return: int
+* Return: character
 */
 int printcharacter(va_list args)
 {
