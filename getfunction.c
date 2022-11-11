@@ -7,16 +7,17 @@
  */
 int get_function(const char s, va_list arg)
 {
-    int i = 0;
-    int j = 0;
+	int i = 0;
+	int j = 0;
 
-    print_t type[] = {
-        {'c', printcharacter},
-        {'s', printstring},
-        {'d', printint},
-        {'i', printint},
-        {'%', printpercent}};
+	print_t type[] = {
+		{'c', printcharacter},
+		{'s', printstring},
+		{'d', printint},
+		{'i', printint},
+		{'%', printpercent}};
 
+<<<<<<< HEAD
     while (type[i].c != 0)
     {
         if (type[i].c == s)
@@ -28,4 +29,17 @@ int get_function(const char s, va_list arg)
     }
    
     return (0);
+=======
+	while (type[i].c != 0)
+	{
+		if (type[i].c == s)
+		{
+			j = j + type[i].f(arg);
+            		return (j);
+		}
+	}
+	i++;
+	}
+	return (0);
+>>>>>>> 8bf373e (function)
 }
