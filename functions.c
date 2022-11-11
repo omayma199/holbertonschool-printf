@@ -6,32 +6,36 @@
 /**
  * printint - print an integer
  * @n: int to print
- * @args : argument 
+ * @args : argument
  * Return: number of printed chars
  */
 int printint(va_list args)
 {
-	int count = 0, n, mod = 1;
-	unsigned int x;
-	n = va_arg(args, int);
-	x = n;
-	if (n < 0)
+	int v;
+	unsigned int i = 0, valeurT;
+	unsigned count = 1;
+
+	v = va_arg(args, int);
+
+	if (v < 0)
 	{
-		_putchar('-');
-		x = -x;
-		++count;
+		i = i + _putchar('_');
+		valeurT = v * -1;
 	}
-	while (x / mod > 9)
+	else
+		valeurT = v;
+
+	while (valeurT > 9)
 	{
-		mod = mod * 10;
+		valeurT = valeurT / 10;
+		count = count * 10;
 	}
-	while (mod > 9)
+	while (count >= 1)
 	{
-		_putchar(x / mod + '0');
-		x = (x % mod);
-		++count;
+		i = i + _putchar(((valeurT / count) % 10) + '0');
+		count = count / 10;
 	}
-	return (count);
+	return (i);
 }
 /**
  * printpercent - print percent
