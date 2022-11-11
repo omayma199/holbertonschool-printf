@@ -17,33 +17,29 @@ int _printf(const char *format, ...)
 	va_start(args, format);
 	while (format[i])
 	{
-		if (format[i] != '%')
+		if (format[i] == '%')
 		{
-			putchar(*(format + i));
-			count++;
-		}
-		if (format[i] == '%' && format[i + 1] != 'K' && format[i + 1] != '!')
-		{
-			fun = get_function(format[i + 1], args);
-			if (fun != 0)
+			if (format[i + 1] != '\0')
+				fun = get_function(format[i + 1]);
+			if (fun == NULL)
 			{
-				count = count + fun;
-				i = i + 2;
+				putchar(format[i]);
+				count++;
+				i++;
+			}
+			else
+			{
+				count += fun(args);
+				i += 2;
 				continue;
 			}
-			if (format[i] == '\0')
-			{
-				putchar(format[i]);
-				count++;
-			}
-			else if ((format[i] == '%' && format[i + 1] == 'K')||(format[i] == '%' && format[i + 1] == '!')  )
-			{
-				putchar(format[i]);
-				count++;
-			}
-			
 		}
-		i++;
+		else
+		{
+			putchar(format[i]);
+			count++;
+			i++;
+		}
 	}
 	va_end(args);
 	return (count);
