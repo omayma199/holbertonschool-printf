@@ -12,6 +12,7 @@
 int printint(int n)
 {
 	int i = 0;
+	int count = 0;
 
 	if (n < 0)
 	{
