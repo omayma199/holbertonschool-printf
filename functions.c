@@ -70,8 +70,6 @@ int printstring(va_list args)
 */
 int printcharacter(va_list args)
 {
-	va_list args;
-
 	_putchar(va_arg(args, int));
 	return (1);
 }
