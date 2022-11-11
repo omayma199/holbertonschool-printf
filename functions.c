@@ -16,7 +16,7 @@ int printint(va_list arg)
 	num = n;
 	if (n < 0)
 	{
-		putchar('_');
+		putchar('-');
 		len++;
 		num = -n;
 	}
