@@ -52,6 +52,8 @@ int printpercent(va_list args)
 int printstring(va_list args)
 {
 	int length = 0;
+	int *str;
+	
 	va_list arg;
 	*str = va_arg(args, char *);
 
