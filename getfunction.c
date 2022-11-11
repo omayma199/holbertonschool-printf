@@ -7,23 +7,25 @@
  */
 int get_function(const char s, va_list args)
 {
-    int i = 0;
-    int j = 0;
-    
-    print_t print[] = {
-        {'c', printcharacter},
-		{'s', printstring},
-		{'d', printint},
-		{'i', printint},
-        {'%', printpercent}};
-        while (print[i].c != 0)
-        {
-            if (print[i].c == s)
-            {
-                j = j + print[i].f(args);
-                return (j);
-            }
-            i++;
-        }
+	int i;
+	int j = 0;
 
+	print_t print[] = {
+		{"c", printcharacter},
+		{"s", printstring},
+		{"d", printint},
+		{"i", printint},
+		{"%", printpercent},
+	};
+
+	for (i = 0; print[i].c; i++)
+	{
+		if (print[i].c == s)
+		{
+			j = j + print[i].f(args);
+			return (j);
+		}
+
+        }
+	return (0);
 }
