@@ -38,7 +38,6 @@ int _printf(const char *format, ...)
 			}
 			else if ((format[i] == '%' && format[i + 1] == 'K')||(format[i] == '%' && format[i + 1] == '!')  )
 			{
-				putchar('%');
 				putchar(format[i]);
 				count++;
 			}
