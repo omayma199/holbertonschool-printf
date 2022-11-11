@@ -26,7 +26,7 @@ int get_function(const char s, va_list arg)
         }
         i++;
     }
-    if (type[i].c == s)
+    if (type[0].c == s)
     {
         putchar('%');
         putchar(s);
