@@ -39,7 +39,6 @@ int get_function(const char s, va_list arg)
 		}
 	}
 	i++;
-	}
 	return (0);
 >>>>>>> 8bf373e (function)
 }
