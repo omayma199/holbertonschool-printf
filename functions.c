@@ -71,7 +71,7 @@ int printstring(va_list args)
 					length++;
 			}
 		}
-	return (1);
+	return (length);
 }
 /**
 * printcharacter - prints a char
