@@ -49,23 +49,15 @@ int printpercent(va_list arg)
  */
 int printstring(va_list arg)
 {
-	int i = 0;
 	char *str = va_arg(arg, char *);
-
+	int i = 0;
 	if (str == NULL)
 	{
 		str = "(null)";
 	}
-	if (str[i] == '\0')
+	for (i = 0; str[i] != '\0'; i++)
 	{
-		return (1);
-	}
-
-	while (str[i])
-	
-	{
-		putchar(str[i]);
-		i++;
+		_putchar(str[i]);
 	}
 	return (i);
 }
