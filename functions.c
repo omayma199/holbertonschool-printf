@@ -50,7 +50,7 @@ int printpercent(va_list arg)
 /**
  * printstring - prints a string
  * @args: argument
- * Return : string
+ * Return : length of string
  */
 int printstring(va_list arg)
 {
