@@ -10,7 +10,7 @@
 >$ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 -Wno-format *.c
 
 ### Betty coding style:
-*All files are written in C and follows the Betty coding style for Holberton School.For more detail, check this page:
+*All files are written in C and follows the Betty coding style for Holberton School.For more detail, check this page:*
 
 [Betty style documentation](http://www.bettystyledocumentation.com)
 
