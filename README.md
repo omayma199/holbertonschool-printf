@@ -44,9 +44,61 @@
 	* getfunction.c: -contains the function printstring, printcharacter,printpercent and printint.
 	* main.h: -contains all headers, prototype and structure declaration
 
-###Function description
+### Function description
 ---
+
 int_printf(const char*format, ..)
 
-*this function produces output under the control of a format string that specifies how subsequent arguments (or arguments accessed via the variable-length argument of stdarg(3)) are converted for output.
+this function produces output under the control of a format string that specifies how subsequent arguments (or arguments accessed via the variable-length argument of stdarg(3)) are converted for output.
 
+The format string is composed of zero or more directives:
+
+	1.Ordinary characters that are copied unchanged to the output stream. (except %)
+	2.Conversion specifications, each of which results in fetching zero or more subsequent arguments. Each conversion specification starts with the character %, ends with a conversion specifier ( which is a letter).
+
+The conversion specifier:
+
+The conversion specifier is a letter that specifies the type of conversion to be applied. Our program includes the following conversion specifiers:
+
+	d: decimal number to be provided for printing.
+
+	i: integer to be provided for printing
+
+	c: character to be provided for printing
+
+	s: ...The const char * argument is expected to be a pointer to an array of character type (pointer to a string).
+
+	%: A per cent sign '%' is written. No argument is converted.
+
+Return value:
+
+Upon success, _printfs return the number of characters printed (excluding the null byte used to end output to strings) A negative 1 is returned if an output error is encountered.
+---
+int get_function(const char s, va_list args)
+
+this function called by _printf() and checks for valid conversion specifier when it finds '%' character. the get_function is function will check for the right conversion specifier. upon valid specifier, it returns the corresponding function.
+---
+int printcharacter(va_list arg)
+
+this function gets a variadic argument, traverse the string, and prints a character at a time.
+---
+int printpercent(va_list arg)
+
+this function prints a percent '%'.
+
+---
+
+### Examples
+
+|	Function			|	Output		|
+|-------------------------------------- |----------------------	|
+|_printf("Negative:[%d]\n", -762534);	|Negative:[-762534]	|
+| _printf("Character:[%c]\n", 'H');     |Character:[H]			|
+
+### Author
+
+#### Snoussi Salma
+**Holberton School, cohort 19**
+
+#### Mizouni Oumaima
+**Holberton School, cohort 19**
