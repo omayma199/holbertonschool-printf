@@ -59,7 +59,7 @@ int printstring(va_list arg)
 		putchar(str[i]);
 		i++;
 	}
-	return (i);
+	return (1);
 }
 /**
  * printcharacter - prints a char
