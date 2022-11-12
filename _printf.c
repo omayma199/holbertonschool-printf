@@ -9,41 +9,39 @@
  */
 int _printf(const char *format, ...)
 {
-	int count = 0, fun = 0, i = 0;
+	int i = 0, j = 0;
 	va_list args;
 
-	if (!format || (format[0] == '%' && format[1] == '\0'))
-		return (-1);
 	va_start(args, format);
+	if (format == NULL || !format[i + 1])
+		return (-1);
 	while (format[i])
 	{
-		if (format[i] != '%')
-		{
-			putchar(*(format + i));
-			count++;
-		}
 		if (format[i] == '%')
 		{
-			fun = get_function(format[i + 1], args);
-			if (fun != 0)
+			if (format[i + 1])
 			{
-				count = count + fun;
-				i = i + 2;
-				continue;
+				if (format[i + 1] != 'c' && format[i + 1] != 's' && format[i + 1] != '%' && format[i + 1] != 'd' && format[i + 1] != 'i')
+				{
+					j += putchar(format[i]);
+					j += putchar(format[i + 1]);
+					i++;
+				}
+				else
+				{
+					f = get_func(&format[i + 1]);
+					j += f(args);
+					i++;
+				}
 			}
-			if (format[i] == '\0')
-			{
-				putchar(format[i]);
-				count++;
-			}
-			else if ((format[i] == '%' && format[i + 1] == 'K')||(format[i] == '%' && format[i + 1] == '!')  )
-			{
-				putchar(format[i]);
-				count++;
-			}
+		}
+		else
+		{
+			putchar(format[i]);
+			j++;
 		}
 		i++;
 	}
 	va_end(args);
-	return (count);
+	return (j);
 }
