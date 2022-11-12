@@ -51,13 +51,21 @@ int printstring(va_list arg)
 {
 	int i = 0;
 	char *str = va_arg(arg, char *);
+
 	if (str == NULL)
 	{
 		str = "(null)";
 	}
-	for (i = 0; str[i] != '\0'; i++)
+	if (str[i] == '\0')
+	{
+		return (1);
+	}
+
+	while (str[i])
+	
 	{
 		putchar(str[i]);
+		i++;
 	}
 	return (i);
 }
