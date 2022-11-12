@@ -24,7 +24,7 @@ int get_function(const char s, va_list arg)
 		{
 			j = j + type[i].f(arg);
 			return (j);
-        	}
+		}
 	i++;
 	}
 
