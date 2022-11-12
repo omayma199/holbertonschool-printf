@@ -2,6 +2,7 @@
 #include <stdarg.h>
 /**
  * get_function - select function for conversion char
+ * @arg: argument.
  * @s: char to check
  * Return: pointer to function
  */
