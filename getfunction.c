@@ -17,28 +17,28 @@ int get_function(const char s, va_list arg)
 		{'i', printint},
 		{'%', printpercent}};
 
-<<<<<<< HEAD
-    while (type[i].c != 0)
-    {
-        if (type[i].c == s)
-        {
-            j = j + type[i].f(arg);
-            return (j);
-        }
-        i++;
-    }
-   
-    return (0);
-=======
+
 	while (type[i].c != 0)
 	{
 		if (type[i].c == s)
 		{
 			j = j + type[i].f(arg);
-            		return (j);
+			return (j);
+        	}
+	i++;
+	}
+
+	return (0);
+
+	while (type[i].c != 0)
+	{
+		if (type[i].c == s)
+		{
+			j = j + type[i].f(arg);
+			return (j);
 		}
 	}
 	i++;
 	return (0);
->>>>>>> 8bf373e (function)
+
 }
