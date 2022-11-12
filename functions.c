@@ -43,20 +43,27 @@ int printpercent(va_list arg)
 	return (1);
 }
 /**
- * funct_string - prints strings
- * @arg: list of arguments the function prints is recieving
- * Return: return the length of the string
+ * printstring - prints a string
+ * @args: argument
+ * Return : string
  */
-int funct_string(va_list arg)
+/**
+ * printstring - prints a string
+ * @args: argument
+ * Return : string
+ */
+int printstring(va_list arg)
 {
-	unsigned int i;
-	char *str;
+	int i = 0;
+	char *str = va_arg(arg, char *);
 
-	str = va_arg(arg, char *);
-	if (str == 0)
+	if (str == NULL)
 		str = "(null)";
-	for (i = 0; str[i] != 0; i++)
-		_putchar(str[i]);
+	while (str[i] != '\0')
+	{
+		putchar(str[i]);
+		i++;
+	}
 	return (i);
 }
 /**
