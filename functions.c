@@ -49,7 +49,7 @@ int printpercent(va_list arg)
  */
 int printstring(va_list arg)
 {
-	int i;
+	int i = 0;
 	char *str = va_arg(arg, char *);
 
 	if (str == NULL)
@@ -62,9 +62,11 @@ int printstring(va_list arg)
 		return (1);
 	}
 
-	for (i = 0; str[i]; i++)
+	while (str[i])
+	
 	{
 		putchar(str[i]);
+		i++;
 	}
 	return (i);
 }
