@@ -28,7 +28,7 @@
 ### Function prototype
 ---
 
-*All function prototypes used to compile _printf() are included in the header file main.h
+*All function prototypes used to compile _printf() are included in the header file main.h*
 
 	* int get_function(const char s, va_list args)
 	* int _printf(const char *format, ...)
@@ -49,16 +49,16 @@
 
 int_printf(const char*format, ..)
 
-this function produces output under the control of a format string that specifies how subsequent arguments (or arguments accessed via the variable-length argument of stdarg(3)) are converted for output.
+*this function produces output under the control of a format string that specifies how subsequent arguments (or arguments accessed via the variable-length argument of stdarg(3)) are converted for output.*
 
-The format string is composed of zero or more directives:
+*The format string is composed of zero or more directives:*
 
 	1.Ordinary characters that are copied unchanged to the output stream. (except %)
 	2.Conversion specifications, each of which results in fetching zero or more subsequent arguments. Each conversion specification starts with the character %, ends with a conversion specifier ( which is a letter).
 
-The conversion specifier:
+*The conversion specifier:*
 
-The conversion specifier is a letter that specifies the type of conversion to be applied. Our program includes the following conversion specifiers:
+*The conversion specifier is a letter that specifies the type of conversion to be applied. Our program includes the following conversion specifiers:*
 
 	d: decimal number to be provided for printing.
 
@@ -70,21 +70,24 @@ The conversion specifier is a letter that specifies the type of conversion to be
 
 	%: A per cent sign '%' is written. No argument is converted.
 
-Return value:
+*Return value:*
 
-Upon success, _printfs return the number of characters printed (excluding the null byte used to end output to strings) A negative 1 is returned if an output error is encountered.
+*Upon success, _printfs return the number of characters printed (excluding the null byte used to end output to strings) A negative 1 is returned if an output error is encountered.*
+
 ---
 int get_function(const char s, va_list args)
 
-this function called by _printf() and checks for valid conversion specifier when it finds '%' character. the get_function is function will check for the right conversion specifier. upon valid specifier, it returns the corresponding function.
+*this function called by _printf() and checks for valid conversion specifier when it finds '%' character. the get_function is function will check for the right conversion specifier. upon valid specifier, it returns the corresponding function.*
+
 ---
 int printcharacter(va_list arg)
 
-this function gets a variadic argument, traverse the string, and prints a character at a time.
+*this function gets a variadic argument, traverse the string, and prints a character at a time.*
+
 ---
 int printpercent(va_list arg)
 
-this function prints a percent '%'.
+*this function prints a percent '%'.*
 
 ---
 
@@ -97,8 +100,8 @@ this function prints a percent '%'.
 
 ### Author
 
-#### Snoussi Salma
-**Holberton School, cohort 19**
+**Snoussi Salma**
+*Holberton School, cohort 19*
 
-#### Mizouni Oumaima
-**Holberton School, cohort 19**
+**Mizouni Oumaima**
+*Holberton School, cohort 19*
