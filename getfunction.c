@@ -30,16 +30,4 @@ int get_function(const char s, va_list arg)
 	}
 
 	return (0);
-
-	while (type[i].c != 0)
-	{
-		if (type[i].c == s)
-		{
-			j = j + type[i].f(arg);
-			return (j);
-		}
-	}
-	i++;
-	return (0);
-
 }
