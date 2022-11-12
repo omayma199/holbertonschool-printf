@@ -2,8 +2,7 @@
 
 /**
  * printint - print an integer
- * @n: int to print
- * @args : argument
+ * @arg : argument
  * Return: number of printed chars
  */
 int printint(va_list arg)
@@ -34,7 +33,7 @@ int printint(va_list arg)
 }
 /**
  * printpercent - print percent
- * @args: argument
+ * @arg: argument
  * Return: int
  */
 int printpercent(va_list arg)
@@ -45,12 +44,7 @@ int printpercent(va_list arg)
 }
 /**
  * printstring - prints a string
- * @args: argument
- * Return : string
- */
-/**
- * printstring - prints a string
- * @args: argument
+ * @arg: argument
  * Return : length of string
  */
 int printstring(va_list arg)
@@ -69,7 +63,7 @@ int printstring(va_list arg)
 }
 /**
  * printcharacter - prints a char
- *@args: argument
+ *@arg: argument
  *
  * Return: character
  */
