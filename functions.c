@@ -11,6 +11,7 @@ int printint(va_list arg)
 	unsigned int num;
 	int n = va_arg(arg, int);
 	int d, len;
+
 	d = 1;
 	len = 0;
 	num = n;
