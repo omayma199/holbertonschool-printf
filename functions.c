@@ -53,7 +53,15 @@ int printstring(va_list arg)
 	char *str = va_arg(arg, char *);
 
 	if (str == NULL)
+	{
 		str = "(null)";
+	}
+	if (str[i] == '\0')
+	{
+		i++;
+		return (1);
+	}
+
 	for (i = 0; str[i]; i++)
 	{
 		putchar(str[i]);
