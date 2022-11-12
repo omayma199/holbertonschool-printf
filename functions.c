@@ -58,7 +58,6 @@ int printstring(va_list arg)
 	}
 	if (str[i] == '\0')
 	{
-		i++;
 		return (1);
 	}
 
