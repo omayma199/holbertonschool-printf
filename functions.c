@@ -55,10 +55,9 @@ int printstring(va_list arg)
 
 	if (str == NULL)
 		str = "(null)";
-	while (str[i] != '\0')
+	for (i = 0; str[i]; i++)
 	{
 		putchar(str[i]);
-		i++;
 	}
 	return (i);
 }
